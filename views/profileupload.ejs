@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="p-10 w-full min-h-screen bg-zinc-900 text-white">
+        <a class="cursor-pointer text-blue-500" href="/">Back to Home</a>
+        <div class="flex flex-col justify-center gap-4 items-center">
+            <div class="w-50 h-50 rounded-md overflow-hidden">
+                <img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic %>">
+            </div>
+            <h1 class="text-3xl"><%= user.name %></h1>
+        </div>
+
+        <h1 class="text-3xl">Upload Profile Picture</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <input class="bg-blue-600 rounded-md px-3 py-2 mt-3 cursor-pointer" type="submit" value="Upload Profile">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- <div class="p-5 w-full min-h-screen bg-zinc-900 text-white">
+    <h1 class="text-3xl">Upload Profile Picture</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input class="bg-blue-600 rounded-md px-3 py-2 mt-3 cursor-pointer" type="submit" value="Upload Profile">
+    </form>
+</div> -->
