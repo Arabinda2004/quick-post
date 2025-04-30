@@ -8,6 +8,7 @@ const path = require('path');
 const userModel = require('./models/user');
 const postModel = require('./models/post');
 const upload = require('./config/multerconfig');
+const port = process.env.PORT||3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -173,4 +174,4 @@ app.get('/logout', isLoggedIn,  (req, res) => {
     res.redirect('/');
 })
 
-app.listen(3000);
+app.listen(port);
